@@ -1,7 +1,7 @@
 # Mason 1000
 某一天Quizlet更新後就不能無限次數的免費玩字卡遊戲了(｡•́︿•̀｡)
 
-<img src="https://github.com/doggydoggy0101/mason_1000/blob/main/image/interface.png" width="625" height="400">
+<img src="https://github.com/doggydoggy0101/Mason_1000/blob/main/image/interface.png" width="625" height="400">
 
 有三個項目可以設定：
 - 題數 Ex.20 (預設為10)
@@ -15,7 +15,7 @@ Please enter number:
 Question in Normal or Random order? (default: Normal)
 Please enter "N" or "R": 
 
-Question is in English or Chinese order? (default: English)
+Question is in English or Chinese? (default: English)
 Please enter "E" or "C": 
 ``` 
 
