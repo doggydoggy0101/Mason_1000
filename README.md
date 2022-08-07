@@ -22,6 +22,6 @@ Please enter "E" or "C":
 祝大家都GRE340!
 
 ## Reference
-[1][MCQ Quiz Game using Tkinter](https://www.geeksforgeeks.org/python-mcq-quiz-game-using-tkinter/)
+[1] [MCQ Quiz Game using Tkinter](https://www.geeksforgeeks.org/python-mcq-quiz-game-using-tkinter/)
 
-[2][Mason 1000 單字卡](https://quizlet.com/220674742/mason-1000-flash-cards/)
+[2] [Mason 1000 單字卡](https://quizlet.com/220674742/mason-1000-flash-cards/)
