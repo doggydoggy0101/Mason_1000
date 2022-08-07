@@ -139,6 +139,7 @@ question,answer,options =generate_gre(QUESTION, ANSWER, NUM, MODE)
 
 gui = Tk()
 gui.geometry("650x420")
+gui.resizable(False, False)
 gui.title("GRE 340")
 quiz = Quiz()
 gui.mainloop()
