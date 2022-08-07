@@ -32,7 +32,7 @@ def generate_gre(question, answer, num,  mode):
 
     return question, ans, opt
 
-class Quiz:
+class GRE340:
 
     def __init__(self):
 
@@ -79,10 +79,10 @@ class Quiz:
     def buttons(self):
          
         next_button = Button(gui, text="下一題",command=self.next_btn, width=10, font=("ariel",16,"bold"))  
-        next_button.place(x=255,y=330)
+        next_button.place(x=255,y=355)
          
         quit_button = Button(gui, text="結束", command=gui.destroy, width=5, font=("ariel",16," bold"))
-        quit_button.place(x=480,y=330)
+        quit_button.place(x=485,y=355)
  
     def display_options(self):
         val = 0
@@ -94,25 +94,25 @@ class Quiz:
  
     def display_question(self):
          
-        q_no = Label(gui, text=question[self.q_no], width=60, font=('ariel',16,'bold'), anchor= 'w' )
+        q_no = Label(gui, text=question[self.q_no], width=60, font=('ariel',18,'bold'), anchor= 'w' )
         q_no.place(x=70, y=80)
  
     def display_title(self):
          
-        title = Label(gui, text="第{}題".format(self.q_no+1), width=50, bg="#123456",fg="white", font=("ariel",20,"bold"))
+        title = Label(gui, text="第{}題 (共{}題)".format(self.q_no+1,NUM), width=50, bg="#123456",fg="white", font=("ariel",20,"bold"))
         title.place(x=0, y=0)
  
     def radio_buttons(self):
          
         q_list = []
-        y_pos = 140
+        y_pos = 145
          
         while len(q_list) < 4:
              
-            radio_btn = Radiobutton(gui,text=" ",variable=self.opt_selected, value = len(q_list)+1,font = ("ariel",14))
+            radio_btn = Radiobutton(gui,text=" ",variable=self.opt_selected, value = len(q_list)+1,font = ("ariel",16))
             q_list.append(radio_btn)
             radio_btn.place(x = 100, y = y_pos)
-            y_pos += 40
+            y_pos += 45
 
         return q_list
 
@@ -122,24 +122,21 @@ english, chinese = data["english"], data["chinese"]
 
 input_num = input("\nNumber of Questions? (default: 10)\nPlease enter number: ")
 input_mode = input("\nQuestion in Normal or Random order? (default: Normal)\nPlease enter \"N\" or \"R\": ")
-input_language = input("\nQuestion is in English or Chinese order? (default: English)\nPlease enter \"E\" or \"C\": ")
+input_language = input("\nQuestion is in English or Chinese? (default: English)\nPlease enter \"E\" or \"C\": ")
 
 NUM = int(input_num) if input_num.isdigit() == True else 10
 MODE = "R" if input_mode == "R" else "N"
 
-if input_language == "C":
-    QUESTION = chinese
-    ANSWER = english
-else: 
-    QUESTION = english
-    ANSWER = chinese
+if input_language == "C": QUESTION,ANSWER = chinese,english
+else: QUESTION,ANSWER = english,chinese
 
 
-question,answer,options =generate_gre(QUESTION, ANSWER, NUM, MODE)   
+question,answer,options = generate_gre(QUESTION, ANSWER, NUM, MODE)   
 
 gui = Tk()
+gui.title("GRE 340")
 gui.geometry("650x420")
 gui.resizable(False, False)
-gui.title("GRE 340")
-quiz = Quiz()
+
+GRE340()
 gui.mainloop()
